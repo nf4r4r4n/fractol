@@ -24,7 +24,18 @@ int	ft_key_hook(int key, t_fract *f)
 
 int	ft_loop_hook(t_fract *f)
 {
-	(void)f;
+	int	i;
+	int	j;
+
+	i = 0;
+	while (i < H)
+	{
+		j = 0;
+		while (j < W)
+			ft_put_pix(f, j++, i, 0);
+		i++;
+	}
+	ft_put_img_to_win(f, 0, 0);
 	return (0);
 }
 

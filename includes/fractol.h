@@ -48,9 +48,12 @@ void	ft_handle_args(int argc, char **argv);
 /** src/ft_fractol.c */
 void	ft_init_fractol(t_fract *f);
 void	ft_destroy_fractol(t_fract *f);
-/** sr/ft_hook.c */
+/** src/ft_hook.c */
 int		ft_key_hook(int key, t_fract *f);
 int		ft_loop_hook(t_fract *f);
 int		ft_close(t_fract *f);
+/** src/ft_tools.c */
+void	ft_put_pix(t_fract *f, int x, int y, int color);
+void	ft_put_img_to_win(t_fract *f, int x, int y);
 
 #endif
