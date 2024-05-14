@@ -6,7 +6,7 @@
 /*   By: nfararan <marvin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 14:32:22 by nfararan          #+#    #+#             */
-/*   Updated: 2024/05/13 16:32:01 by nfararan         ###   ########.fr       */
+/*   Updated: 2024/05/14 10:58:12 by nfararan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ static void	ft_init_obj(t_fract *f)
 	f->bpp = 0;
 	f->ll = 0;
 	f->endian = 0;
-	f->name = NULL;
 }
 
 void	ft_init_fractol(t_fract *f)
@@ -30,7 +29,7 @@ void	ft_init_fractol(t_fract *f)
 	f->mlx = mlx_init();
 	if (!f->mlx)
 		ft_exit("Mlx init", 1, NULL);
-	f->win = mlx_new_window(f->mlx, W, H, f->name);
+	f->win = mlx_new_window(f->mlx, W, H, "Fractol");
 	if (!f->win)
 	{
 		free(f->mlx);
