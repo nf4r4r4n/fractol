@@ -6,7 +6,7 @@
 /*   By: nfararan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 13:56:30 by nfararan          #+#    #+#             */
-/*   Updated: 2024/05/14 10:57:55 by nfararan         ###   ########.fr       */
+/*   Updated: 2024/05/14 11:07:04 by nfararan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,9 @@
 # endif
 # ifndef H
 #  define H 600
+# endif
+# ifndef MAX
+#  define MAX 200
 # endif
 
 typedef struct s_cpx
@@ -57,5 +60,7 @@ void	ft_put_pix(t_fract *f, int x, int y, int color);
 void	ft_put_img_to_win(t_fract *f, int x, int y);
 /** src/ft_render.c */
 void	ft_set_bg(t_fract *f, int color);
+/** src/set/mandelbrot.c */
+void	ft_calc_mandel(t_fract *f, int x, int y);
 
 #endif
