@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fractol.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nfararan <marvin@student.42.fr>            +#+  +:+       +#+        */
+/*   By: nfararan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 13:56:30 by nfararan          #+#    #+#             */
-/*   Updated: 2024/05/13 16:30:55 by nfararan         ###   ########.fr       */
+/*   Updated: 2024/05/14 09:22:14 by nfararan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,5 +55,7 @@ int		ft_close(t_fract *f);
 /** src/ft_tools.c */
 void	ft_put_pix(t_fract *f, int x, int y, int color);
 void	ft_put_img_to_win(t_fract *f, int x, int y);
+/** src/ft_render.c */
+void	ft_set_bg(t_fract *f, int color);
 
 #endif
