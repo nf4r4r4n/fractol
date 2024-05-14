@@ -6,7 +6,7 @@
 /*   By: nfararan <marvin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 11:01:47 by nfararan          #+#    #+#             */
-/*   Updated: 2024/05/14 11:11:10 by nfararan         ###   ########.fr       */
+/*   Updated: 2024/05/14 16:34:33 by nfararan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ void	ft_calc_mandel(t_fract *f, int x, int y)
 	i = 0;
 	while (i < MAX && z.x * z.x + z.y * z.y < 4)
 	{
-		z.x = ;
-		z.y = ;
+		z.x = (z.x * z.x) - (z.y * z.y) + c.x;
+		z.y = (2 * z.x * z.y) + c.y;
 		i++;
 	}
 	if (i == MAX)
