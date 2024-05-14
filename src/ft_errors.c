@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_errors.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nfararan <marvin@student.42.fr>            +#+  +:+       +#+        */
+/*   By: nfararan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 14:01:49 by nfararan          #+#    #+#             */
-/*   Updated: 2024/05/13 14:22:35 by nfararan         ###   ########.fr       */
+/*   Updated: 2024/05/14 10:57:42 by nfararan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,12 +32,11 @@ void	ft_exit(char *msg, int err, void (*f)(void))
 
 void	ft_handle_args(int argc, char **argv)
 {
-	if (argc != 2)
-		ft_exit("You may try the next command", 1, &ft_usage);
-	if (ft_strncmp("m", argv[1], 1) == 0)
-		ft_putstr_fd("Mandelbrot Set\n", 1);
-	else if (ft_strncmp("j", argv[1], 1) == 0)
-		ft_putstr_fd("Julia Set\n", 1);
-	else
+	int	is_mdl;
+	int	is_jul;
+
+	is_mdl = ft_strncmp("m", argv[1], 1) != 0;
+	is_jul = ft_strncmp("j", argv[1], 1) != 0;
+	if (argc != 2 || (is_mdl && is_jul))
 		ft_exit("You may try the next command", 1, &ft_usage);
 }
