@@ -1,6 +1,6 @@
 NAME	=	fractol
 SRCS	=	src/main.c src/ft_errors.c src/ft_fractol.c \
-			src/ft_hook.c src/ft_tools.c
+			src/ft_hook.c src/ft_tools.c src/ft_render.c
 OBJ		=	$(SRCS:.c=.o)
 LIBFT	=	libft/libft.a
 INCLUDE	=	-I includes

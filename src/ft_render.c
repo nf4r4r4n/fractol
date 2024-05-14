@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tools.c                                         :+:      :+:    :+:   */
+/*   ft_render.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nfararan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/13 16:53:27 by nfararan          #+#    #+#             */
-/*   Updated: 2024/05/14 10:02:47 by nfararan         ###   ########.fr       */
+/*   Created: 2024/05/14 09:20:34 by nfararan          #+#    #+#             */
+/*   Updated: 2024/05/14 09:59:22 by nfararan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
-void	ft_put_pix(t_fract *f, int x, int y, int color)
+void	ft_set_bg(t_fract *f, int color)
 {
-	char	*pix;
+	int	i;
+	int	j;
 
-	if (x >= 0 && x <= W && y >= 0 && y <= H)
+	i = 0;
+	while (i < H)
 	{
-		pix = f->addr + (y * f->ll + x * (f->bpp / 8));
-		*(int *)pix = color;
+		j = 0;
+		while (j < W)
+			ft_put_pix(f, j++, i, color);
+		i++;
 	}
-}
-
-void	ft_put_img_to_win(t_fract *f, int x, int y)
-{
-	mlx_put_image_to_window(f->mlx, f->win, f->img, x, y);
+	ft_put_img_to_win(f, 0, 0);
 }

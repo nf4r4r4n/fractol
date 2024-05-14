@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_hook.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nfararan <marvin@student.42.fr>            +#+  +:+       +#+        */
+/*   By: nfararan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 14:43:51 by nfararan          #+#    #+#             */
-/*   Updated: 2024/05/13 16:29:54 by nfararan         ###   ########.fr       */
+/*   Updated: 2024/05/14 09:59:08 by nfararan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ int	ft_key_hook(int key, t_fract *f)
 int	ft_loop_hook(t_fract *f)
 {
 	(void)f;
+	ft_set_bg(f, 0xFF0000);
 	return (0);
 }
 
