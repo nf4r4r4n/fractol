@@ -1,5 +1,5 @@
 NAME=libft.a
-CFLAGS=-Wall -Wextra -Werror
+CFLAGS=-Wall -Wextra -Werror -g
 SRC=ft_atoi.c \
 	ft_bzero.c \
 	ft_isalnum.c \
