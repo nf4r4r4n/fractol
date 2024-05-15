@@ -6,7 +6,7 @@
 /*   By: nfararan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 14:43:51 by nfararan          #+#    #+#             */
-/*   Updated: 2024/05/15 10:30:50 by nfararan         ###   ########.fr       */
+/*   Updated: 2024/05/15 16:12:08 by nfararan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,7 @@ int	ft_key_hook(int key, t_fract *f)
 
 int	ft_loop_hook(t_fract *f)
 {
-	ft_set_bg(f, 0xFFFF00);
-	ft_put_img_to_win(f, 0, 0);
+	(void)f;
 	return (0);
 }
 

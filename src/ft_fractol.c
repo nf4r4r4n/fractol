@@ -6,7 +6,7 @@
 /*   By: nfararan <marvin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 14:32:22 by nfararan          #+#    #+#             */
-/*   Updated: 2024/05/15 10:30:32 by nfararan         ###   ########.fr       */
+/*   Updated: 2024/05/15 16:07:57 by nfararan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,5 @@ void	ft_destroy_fractol(t_fract *f)
 {
 	mlx_destroy_image(f->mlx, f->img);
 	mlx_destroy_display(f->mlx);
-	free(f->mlx);
 	free(f);
 }
