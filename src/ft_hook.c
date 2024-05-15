@@ -6,7 +6,7 @@
 /*   By: nfararan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 14:43:51 by nfararan          #+#    #+#             */
-/*   Updated: 2024/05/15 16:12:08 by nfararan         ###   ########.fr       */
+/*   Updated: 2024/05/15 16:36:19 by nfararan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,4 +33,11 @@ int	ft_close(t_fract *f)
 	mlx_destroy_window(f->mlx, f->win);
 	f->win = NULL;
 	return (0);
+}
+
+void	ft_hook(t_fract *f)
+{
+	mlx_loop_hook(f->mlx, &ft_loop_hook, f);
+	mlx_key_hook(f->win, &ft_key_hook, f);
+	mlx_hook(f->win, 17, 0L, &ft_close, f);
 }

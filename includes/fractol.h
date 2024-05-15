@@ -6,7 +6,7 @@
 /*   By: nfararan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 13:56:30 by nfararan          #+#    #+#             */
-/*   Updated: 2024/05/15 16:19:23 by nfararan         ###   ########.fr       */
+/*   Updated: 2024/05/15 16:35:48 by nfararan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,7 @@ void	ft_destroy_fractol(t_fract *f);
 int		ft_key_hook(int key, t_fract *f);
 int		ft_loop_hook(t_fract *f);
 int		ft_close(t_fract *f);
+void	ft_hook(t_fract *f);
 /** src/ft_tools.c */
 void	ft_put_pix(t_fract *f, int x, int y, int color);
 void	ft_put_img_to_win(t_fract *f, int x, int y);
