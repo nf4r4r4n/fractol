@@ -6,7 +6,7 @@
 /*   By: nfararan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 13:56:30 by nfararan          #+#    #+#             */
-/*   Updated: 2024/05/14 11:07:04 by nfararan         ###   ########.fr       */
+/*   Updated: 2024/05/15 10:30:05 by nfararan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ typedef struct s_fract
 
 /** src/ft_errors.c */
 void	ft_exit(char *msg, int err, void (*f)(void));
-void	ft_handle_args(int argc, char **argv);
+void	ft_handle_args(int argc, char **argv, t_fract *f);
 /** src/ft_fractol.c */
 void	ft_init_fractol(t_fract *f);
 void	ft_destroy_fractol(t_fract *f);
