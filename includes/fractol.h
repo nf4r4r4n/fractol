@@ -6,7 +6,7 @@
 /*   By: nfararan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 13:56:30 by nfararan          #+#    #+#             */
-/*   Updated: 2024/05/15 10:30:05 by nfararan         ###   ########.fr       */
+/*   Updated: 2024/05/15 16:19:23 by nfararan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,7 @@ void	ft_put_pix(t_fract *f, int x, int y, int color);
 void	ft_put_img_to_win(t_fract *f, int x, int y);
 /** src/ft_render.c */
 void	ft_set_bg(t_fract *f, int color);
+void	ft_render(t_fract *f, char set);
 /** src/set/mandelbrot.c */
 void	ft_calc_mandel(t_fract *f, int x, int y);
 
