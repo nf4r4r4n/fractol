@@ -6,7 +6,7 @@
 /*   By: nfararan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 16:53:27 by nfararan          #+#    #+#             */
-/*   Updated: 2024/05/15 16:12:47 by nfararan         ###   ########.fr       */
+/*   Updated: 2024/05/18 09:53:57 by nfararan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_put_pix(t_fract *f, int x, int y, int color)
 	char	*pix;
 
 	pix = f->addr + (y * f->ll + x * (f->bpp / 8));
-	*(unsigned int*)pix = color;
+	*(unsigned int *)pix = color;
 }
 
 void	ft_put_img_to_win(t_fract *f, int x, int y)
