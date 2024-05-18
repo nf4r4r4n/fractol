@@ -6,7 +6,7 @@
 /*   By: nfararan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/18 10:38:08 by nfararan          #+#    #+#             */
-/*   Updated: 2024/05/18 10:53:52 by nfararan         ###   ########.fr       */
+/*   Updated: 2024/05/18 12:25:15 by nfararan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,15 +28,15 @@ int	is_julia(t_complex z)
 		z_next = complex_z_next(z_next, c);
 		i++;
 	}
-	if (i == ITER_MAX)
-		return (1);
-	return (0);
+	return (i);
 }
 
 void	render_julia(t_fract *f)
 {
 	int	i;
 	int	j;
+	int	color;
+	int	iter;
 
 	i = 0;
 	while (i < HEIGHT)
@@ -44,10 +44,14 @@ void	render_julia(t_fract *f)
 		j = 0;
 		while (j < WIDTH)
 		{
-			if (is_julia(complex_new((double)j, (double)i)))
-				ft_put_pix(f, j, i, 0);
+			iter = is_julia(complex_new((double)j, (double)i));
+			if (iter == ITER_MAX)
+				color = 0;
 			else
-				ft_put_pix(f, j, i, 0xFFFFFF);
+				color = int_map(iter, 
+						(t_irange){.min = 0, .max = ITER_MAX},
+						(t_irange){.min = 0, .max = PSYCH_BLUE});
+			ft_put_pix(f, j, i, color);
 			j++;
 		}
 		i++;
