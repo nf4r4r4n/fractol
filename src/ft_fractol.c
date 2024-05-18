@@ -6,7 +6,7 @@
 /*   By: nfararan <marvin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 14:32:22 by nfararan          #+#    #+#             */
-/*   Updated: 2024/05/15 16:07:57 by nfararan         ###   ########.fr       */
+/*   Updated: 2024/05/18 10:33:16 by nfararan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,14 +32,14 @@ void	ft_init_fractol(t_fract *f)
 		free(f);
 		ft_exit("Mlx init", 1, NULL);
 	}
-	f->win = mlx_new_window(f->mlx, W, H, "Fractol");
+	f->win = mlx_new_window(f->mlx, WIDTH, HEIGHT, "Fractol");
 	if (!f->win)
 	{
 		free(f->mlx);
 		free(f);
 		ft_exit("Window init", 1, NULL);
 	}
-	f->img = mlx_new_image(f->mlx, W, H);
+	f->img = mlx_new_image(f->mlx, WIDTH, HEIGHT);
 	if (!f->img)
 	{
 		free(f->win);

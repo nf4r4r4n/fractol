@@ -6,7 +6,7 @@
 /*   By: nfararan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 13:56:30 by nfararan          #+#    #+#             */
-/*   Updated: 2024/05/18 09:53:08 by nfararan         ###   ########.fr       */
+/*   Updated: 2024/05/18 10:32:50 by nfararan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,14 @@
 # include <stdlib.h>
 # include "../libft/libft.h"
 
-# ifndef W
-#  define W 800
+# ifndef WIDTH
+#  define WIDTH 1000
 # endif
-# ifndef H
-#  define H 600
+# ifndef HEIGHT
+#  define HEIGHT 1000
 # endif
-# ifndef MAX
-#  define MAX 200
+# ifndef ITER_MAX
+#  define ITER_MAX 300
 # endif
 
 typedef struct s_fract
@@ -81,5 +81,7 @@ void		ft_set_bg(t_fract *f, int color);
 void		ft_render(t_fract *f, char set);
 
 /** src/set/mandelbrot.c */
+int			is_mandelbrot(t_complex c);
+void		render_mandelbrot(t_fract *f);
 
 #endif
