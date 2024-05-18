@@ -6,7 +6,7 @@
 /*   By: nfararan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 13:56:30 by nfararan          #+#    #+#             */
-/*   Updated: 2024/05/18 10:55:58 by nfararan         ###   ########.fr       */
+/*   Updated: 2024/05/18 12:25:22 by nfararan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,10 @@
 #  define HEIGHT 1000
 # endif
 # ifndef ITER_MAX
-#  define ITER_MAX 200
+#  define ITER_MAX 100
+# endif
+# ifndef PSYCH_BLUE
+#  define PSYCH_BLUE 0x7DF9FF
 # endif
 
 typedef struct s_fract
@@ -44,6 +47,12 @@ typedef struct s_range
 	double	start;
 	double	end;
 }	t_range;
+
+typedef struct s_irange
+{
+	int	min;
+	int	max;
+}	t_irange;
 
 typedef struct s_complex
 {
@@ -75,6 +84,8 @@ void		ft_hook(t_fract *f);
 /** src/ft_tools.c */
 void		ft_put_pix(t_fract *f, int x, int y, int color);
 void		ft_put_img_to_win(t_fract *f, int x, int y);
+int			int_map(int n, t_irange in, t_irange out);
+int			argb(int a, int r, int g, int b);
 
 /** src/ft_render.c */
 void		ft_set_bg(t_fract *f, int color);
