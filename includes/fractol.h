@@ -6,7 +6,7 @@
 /*   By: nfararan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 13:56:30 by nfararan          #+#    #+#             */
-/*   Updated: 2024/05/18 12:25:22 by nfararan         ###   ########.fr       */
+/*   Updated: 2024/05/21 16:06:44 by nfararan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,16 +18,19 @@
 # include "../libft/libft.h"
 
 # ifndef WIDTH
-#  define WIDTH 1000
+#  define WIDTH 800
 # endif
 # ifndef HEIGHT
-#  define HEIGHT 1000
+#  define HEIGHT 800
 # endif
 # ifndef ITER_MAX
-#  define ITER_MAX 100
+#  define ITER_MAX 42
 # endif
 # ifndef PSYCH_BLUE
 #  define PSYCH_BLUE 0x7DF9FF
+# endif
+# ifndef LIGHT_BLUE
+#  define LIGHT_BLUE 0x7BC9FF
 # endif
 
 typedef struct s_fract
@@ -86,6 +89,7 @@ void		ft_put_pix(t_fract *f, int x, int y, int color);
 void		ft_put_img_to_win(t_fract *f, int x, int y);
 int			int_map(int n, t_irange in, t_irange out);
 int			argb(int a, int r, int g, int b);
+int			interpolate(int a, int b, double factor);
 
 /** src/ft_render.c */
 void		ft_set_bg(t_fract *f, int color);

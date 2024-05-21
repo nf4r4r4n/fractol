@@ -6,7 +6,7 @@
 /*   By: nfararan <marvin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 11:01:47 by nfararan          #+#    #+#             */
-/*   Updated: 2024/05/18 10:34:02 by nfararan         ###   ########.fr       */
+/*   Updated: 2024/05/21 16:11:52 by nfararan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,15 +28,15 @@ int	is_mandelbrot(t_complex c)
 		z = complex_z_next(z, map_c);
 		i++;
 	}
-	if (i == ITER_MAX)
-		return (1);
-	return (0);
+	return (i);
 }
 
 void	render_mandelbrot(t_fract *f)
 {
 	int	i;
 	int	j;
+	int	color;
+	int	iter;
 
 	i = 0;
 	while (i < HEIGHT)
@@ -44,10 +44,9 @@ void	render_mandelbrot(t_fract *f)
 		j = 0;
 		while (j < WIDTH)
 		{
-			if (is_mandelbrot(complex_new((double)j, (double)i)))
-				ft_put_pix(f, j, i, 0);
-			else
-				ft_put_pix(f, j, i, 0xFFFFFF);
+			iter = is_mandelbrot(complex_new((double)j, (double)i));
+			color = interpolate(0x000000, 0xffffff, (double)iter / (double)ITER_MAX);
+			ft_put_pix(f, j, i, color);
 			j++;
 		}
 		i++;
