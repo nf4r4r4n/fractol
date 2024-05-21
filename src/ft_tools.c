@@ -6,7 +6,7 @@
 /*   By: nfararan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 16:53:27 by nfararan          #+#    #+#             */
-/*   Updated: 2024/05/18 11:55:46 by nfararan         ###   ########.fr       */
+/*   Updated: 2024/05/21 15:53:19 by nfararan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,4 +36,25 @@ int		int_map(int n, t_irange in, t_irange out)
 int	argb(int a, int r, int g, int b)
 {
 	return (a << 24 | r << 16 | g << 8 | b );
+}
+
+/**
+	* interpolated_color = a + (b - a) * factor
+*/
+int	interpolate(int a, int b, double factor)
+{
+	int	a2[3];
+	int	b2[3];
+	int	c[3];
+
+	a2[0] = (a >> 16) & 0xff;
+	a2[1] = (a >> 8) & 0xff;
+	a2[2] = (a >> 0) & 0xff;
+	b2[0] = (b >> 16) & 0xff;
+	b2[1] = (b >> 8) & 0xff;
+	b2[2] = (b >> 0) & 0xff;
+	c[0] = (int)(a2[0] + (b2[0] - a2[0]) * factor);
+	c[1] = (int)(a2[1] + (b2[1] - a2[1]) * factor);
+	c[2] = (int)(a2[2] + (b2[2] - a2[2]) * factor);
+	return (0xff << 24 | (c[0] << 16) | (c[1] << 8) | c[2]);
 }
