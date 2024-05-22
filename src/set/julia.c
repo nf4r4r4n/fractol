@@ -6,7 +6,7 @@
 /*   By: nfararan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/18 10:38:08 by nfararan          #+#    #+#             */
-/*   Updated: 2024/05/22 11:06:52 by nfararan         ###   ########.fr       */
+/*   Updated: 2024/05/22 15:12:53 by nfararan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ int	is_julia(t_complex z, t_fract *f)
 			(t_range){.start = -2, .end = 2});
 	c = complex_new(f->jx, f->jy);
 	i = 0;
+	z_next.x /= f->zoom;
+	z_next.y /= f->zoom;
 	while (i < ITER_MAX && z_next.x * z_next.x + z_next.y * z_next.y < 4)
 	{
 		z_next = complex_z_next(z_next, c);
