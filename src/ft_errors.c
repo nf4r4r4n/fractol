@@ -6,7 +6,7 @@
 /*   By: nfararan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 14:01:49 by nfararan          #+#    #+#             */
-/*   Updated: 2024/05/15 10:30:24 by nfararan         ###   ########.fr       */
+/*   Updated: 2024/05/22 11:07:40 by nfararan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 static void	ft_usage(void)
 {
 	ft_putstr_fd("Usage:     ./fractol <set>\n", 1);
+	ft_putstr_fd("          ./fractol <set> <real> <imaginary> (Julia)\n", 1);
 	ft_putstr_fd("Sets:\n", 1);
 	ft_putstr_fd("     -[m] for mandelbrot\n", 1);
 	ft_putstr_fd("     -[j] for julia\n", 1);
@@ -32,7 +33,7 @@ void	ft_exit(char *msg, int err, void (*f)(void))
 
 void	ft_handle_args(int argc, char **argv, t_fract *f)
 {
-	if (argc != 2 || ft_strlen(argv[1]) != 1)
+	if (argc < 2 || ft_strlen(argv[1]) != 1)
 	{
 		free(f);
 		ft_exit("You may try the next command", 1, &ft_usage);
@@ -41,5 +42,18 @@ void	ft_handle_args(int argc, char **argv, t_fract *f)
 	{
 		free(f);
 		ft_exit("You may try the next command", 1, &ft_usage);
+	}
+	if (argv[1][0] == 'j')
+	{
+		if (argc == 4)
+		{
+			f->jx = ft_atof(argv[2]);
+			f->jy = ft_atof(argv[3]);
+		}
+		else
+		{
+			f->jx = 0.4;
+			f->jy = 0.4;
+		}
 	}
 }

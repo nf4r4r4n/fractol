@@ -6,7 +6,7 @@
 /*   By: nfararan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 13:56:30 by nfararan          #+#    #+#             */
-/*   Updated: 2024/05/21 16:06:44 by nfararan         ###   ########.fr       */
+/*   Updated: 2024/05/22 10:36:20 by nfararan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,8 @@ typedef struct s_fract
 	int		ll;
 	int		endian;
 	char	*name;
+	double	jx;
+	double	jy;
 }	t_fract;
 
 typedef struct s_range
@@ -100,7 +102,11 @@ int			is_mandelbrot(t_complex c);
 void		render_mandelbrot(t_fract *f);
 
 /** src/set/julia.c */
-int			is_julia(t_complex z);
+int			is_julia(t_complex z, t_fract *f);
 void		render_julia(t_fract *f);
+
+/** src/ft_utils.c */
+double		ft_atof(const char *str);
+
 
 #endif

@@ -1,9 +1,9 @@
 # PARTIE OBLIGATOIRE
 - [X] Julia & Mandelbrot
 - [ ] Zoomer et dezoomer de facon quasi-infinie
-- [ ] donner des parametres au programmes pour l'ensemble de Julia
-- [ ] Au moins un parametre est passe en ligne de commande
-    - [ ] il est possible de gerer des parametres en plus pour l'ensemble de Julia
+- [X] donner des parametres au programmes pour l'ensemble de Julia
+- [X] Au moins un parametre est passe en ligne de commande
+    - [X] il est possible de gerer des parametres en plus pour l'ensemble de Julia
     - [X] si aucun parametre n'est fourni ou si le parametre est invalide, afficher "usage"
 - [ ] il doit y avoir un jeu de couleur minimum pour resentir la profondeur de chaque fractale
 - [X] le programme doit afficher uen image dans une fenetre

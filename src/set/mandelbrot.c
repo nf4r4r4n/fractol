@@ -6,7 +6,7 @@
 /*   By: nfararan <marvin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 11:01:47 by nfararan          #+#    #+#             */
-/*   Updated: 2024/05/21 16:11:52 by nfararan         ###   ########.fr       */
+/*   Updated: 2024/05/22 11:07:15 by nfararan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void	render_mandelbrot(t_fract *f)
 		while (j < WIDTH)
 		{
 			iter = is_mandelbrot(complex_new((double)j, (double)i));
-			color = interpolate(0x000000, 0xffffff, (double)iter / (double)ITER_MAX);
+			color = interpolate(0, 0xffffff, (double)iter / (double)ITER_MAX);
 			ft_put_pix(f, j, i, color);
 			j++;
 		}
