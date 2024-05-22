@@ -6,7 +6,7 @@
 /*   By: nfararan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 13:56:30 by nfararan          #+#    #+#             */
-/*   Updated: 2024/05/22 10:36:20 by nfararan         ###   ########.fr       */
+/*   Updated: 2024/05/22 14:11:02 by nfararan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 # include <mlx.h>
 # include <X11/keysym.h>
 # include <stdlib.h>
+# include "keys.h"
 # include "../libft/libft.h"
 
 # ifndef WIDTH
