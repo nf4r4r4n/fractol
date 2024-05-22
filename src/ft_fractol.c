@@ -6,7 +6,7 @@
 /*   By: nfararan <marvin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 14:32:22 by nfararan          #+#    #+#             */
-/*   Updated: 2024/05/18 10:33:16 by nfararan         ###   ########.fr       */
+/*   Updated: 2024/05/22 15:12:17 by nfararan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ static void	ft_init_obj(t_fract *f)
 	f->bpp = 0;
 	f->ll = 0;
 	f->endian = 0;
+	f->zoom = 1.0;
 }
 
 void	ft_init_fractol(t_fract *f)

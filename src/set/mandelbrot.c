@@ -6,13 +6,13 @@
 /*   By: nfararan <marvin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 11:01:47 by nfararan          #+#    #+#             */
-/*   Updated: 2024/05/22 11:07:15 by nfararan         ###   ########.fr       */
+/*   Updated: 2024/05/22 15:14:12 by nfararan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
-int	is_mandelbrot(t_complex c)
+int	is_mandelbrot(t_complex c, t_fract *f)
 {
 	t_complex	z;
 	t_complex	map_c;
@@ -22,6 +22,8 @@ int	is_mandelbrot(t_complex c)
 	map_c = complex_map(c,
 			(t_range){.start = 0, .end = WIDTH},
 			(t_range){.start = -2, .end = 2});
+	map_c.x /= f->zoom;
+	map_c.y /= f->zoom;
 	i = 0;
 	while (i < ITER_MAX && z.x * z.x + z.y * z.y < 4)
 	{
@@ -44,7 +46,7 @@ void	render_mandelbrot(t_fract *f)
 		j = 0;
 		while (j < WIDTH)
 		{
-			iter = is_mandelbrot(complex_new((double)j, (double)i));
+			iter = is_mandelbrot(complex_new((double)j, (double)i), f);
 			color = interpolate(0, 0xffffff, (double)iter / (double)ITER_MAX);
 			ft_put_pix(f, j, i, color);
 			j++;

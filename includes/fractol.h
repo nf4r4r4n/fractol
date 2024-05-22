@@ -6,14 +6,13 @@
 /*   By: nfararan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 13:56:30 by nfararan          #+#    #+#             */
-/*   Updated: 2024/05/22 14:11:02 by nfararan         ###   ########.fr       */
+/*   Updated: 2024/05/22 15:27:38 by nfararan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FRACTOL_H
 # define FRACTOL_H
 # include <mlx.h>
-# include <X11/keysym.h>
 # include <stdlib.h>
 # include "keys.h"
 # include "../libft/libft.h"
@@ -25,7 +24,7 @@
 #  define HEIGHT 800
 # endif
 # ifndef ITER_MAX
-#  define ITER_MAX 42
+#  define ITER_MAX 200
 # endif
 # ifndef PSYCH_BLUE
 #  define PSYCH_BLUE 0x7DF9FF
@@ -43,9 +42,10 @@ typedef struct s_fract
 	int		bpp;
 	int		ll;
 	int		endian;
-	char	*name;
 	double	jx;
 	double	jy;
+	double	zoom;
+	char	set;
 }	t_fract;
 
 typedef struct s_range
@@ -86,6 +86,7 @@ int			ft_key_hook(int key, t_fract *f);
 int			ft_loop_hook(t_fract *f);
 int			ft_close(t_fract *f);
 void		ft_hook(t_fract *f);
+int			ft_mouse_hook(int button, int x, int y, t_fract	*f);
 
 /** src/ft_tools.c */
 void		ft_put_pix(t_fract *f, int x, int y, int color);
@@ -99,7 +100,7 @@ void		ft_set_bg(t_fract *f, int color);
 void		ft_render(t_fract *f, char set);
 
 /** src/set/mandelbrot.c */
-int			is_mandelbrot(t_complex c);
+int			is_mandelbrot(t_complex c, t_fract *f);
 void		render_mandelbrot(t_fract *f);
 
 /** src/set/julia.c */
