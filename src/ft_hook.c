@@ -6,15 +6,15 @@
 /*   By: nfararan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 14:43:51 by nfararan          #+#    #+#             */
-/*   Updated: 2024/05/15 16:36:19 by nfararan         ###   ########.fr       */
+/*   Updated: 2024/05/22 14:19:27 by nfararan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
-int	ft_key_hook(int key, t_fract *f)
+int	ft_key_hook(int keysym, t_fract *f)
 {
-	if (key == XK_Escape)
+	if (keysym == K_ESCAPE)
 	{
 		mlx_destroy_window(f->mlx, f->win);
 		f->win = NULL;
