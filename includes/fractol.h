@@ -6,7 +6,7 @@
 /*   By: nfararan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 13:56:30 by nfararan          #+#    #+#             */
-/*   Updated: 2024/05/22 15:27:38 by nfararan         ###   ########.fr       */
+/*   Updated: 2024/05/23 10:15:07 by nfararan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define FRACTOL_H
 # include <mlx.h>
 # include <stdlib.h>
+# include <math.h>
 # include "keys.h"
 # include "../libft/libft.h"
 
@@ -24,7 +25,7 @@
 #  define HEIGHT 800
 # endif
 # ifndef ITER_MAX
-#  define ITER_MAX 200
+#  define ITER_MAX 300
 # endif
 # ifndef PSYCH_BLUE
 #  define PSYCH_BLUE 0x7DF9FF
