@@ -6,7 +6,7 @@
 /*   By: nfararan <marvin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 11:01:47 by nfararan          #+#    #+#             */
-/*   Updated: 2024/05/23 11:15:33 by nfararan         ###   ########.fr       */
+/*   Updated: 2024/05/23 12:07:33 by nfararan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,9 +50,7 @@ void	render_mandelbrot(t_fract *f)
 			if (iter == ITER_MAX)
 				color = 0;
 			else
-				color = int_map(iter,
-						(t_irange){.min = 0, .max = ITER_MAX},
-						(t_irange){.min = 0, .max = 0xffffff}) * 5;
+				color = interpolate(0x131422, 0xff2222, (double)iter / (ITER_MAX / 2));
 			ft_put_pix(f, j, i, color);
 			j++;
 		}

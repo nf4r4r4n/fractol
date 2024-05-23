@@ -6,7 +6,7 @@
 /*   By: nfararan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 14:01:49 by nfararan          #+#    #+#             */
-/*   Updated: 2024/05/22 15:23:04 by nfararan         ###   ########.fr       */
+/*   Updated: 2024/05/23 11:33:55 by nfararan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,8 +52,8 @@ void	ft_handle_args(int argc, char **argv, t_fract *f)
 		}
 		else
 		{
-			f->jx = 0.4;
-			f->jy = 0.4;
+			f->jx = -0.8;
+			f->jy = 0.156;
 		}
 	}
 	f->set = argv[1][0];
