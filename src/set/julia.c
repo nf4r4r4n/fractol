@@ -6,7 +6,7 @@
 /*   By: nfararan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/18 10:38:08 by nfararan          #+#    #+#             */
-/*   Updated: 2024/05/22 15:12:53 by nfararan         ###   ########.fr       */
+/*   Updated: 2024/05/23 11:16:25 by nfararan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,12 @@ void	render_julia(t_fract *f)
 		while (j < WIDTH)
 		{
 			iter = is_julia(complex_new((double)j, (double)i), f);
-			color = interpolate(0, 0xFF7F3E, (double)iter / (double)ITER_MAX);
+			if (iter == ITER_MAX)
+				color = 0;
+			else
+				color = int_map(iter,
+						(t_irange){.min = 0, .max = ITER_MAX},
+						(t_irange){.min = 0, .max = 0xffffff}) * 5;
 			ft_put_pix(f, j, i, color);
 			j++;
 		}

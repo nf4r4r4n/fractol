@@ -6,7 +6,7 @@
 /*   By: nfararan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 14:43:51 by nfararan          #+#    #+#             */
-/*   Updated: 2024/05/22 15:25:13 by nfararan         ###   ########.fr       */
+/*   Updated: 2024/05/23 10:51:59 by nfararan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,11 @@ int	ft_mouse_hook(int button, int x, int y, t_fract	*f)
 	(void)x;
 	(void)y;
 	if (button == M_WHEEL_FOR)
-		f->zoom -= 5.0;
+		f->zoom -= 20.0;
 	else if (button == M_WHEEL_BACK)
-		f->zoom += 5.0;
+		f->zoom += 20.0;
+	else if (button == M_LEFT)
+		f->zoom = 1.0;
 	ft_render(f, f->set);
 	return (0);
 }
